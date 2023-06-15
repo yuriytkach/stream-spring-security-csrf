@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Приватна Сторінка</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<h1 style="border-color: #ffd000">Героям Слава! 🇺🇦</h1>
+	<p>Привіт, <b><th:block th:text="${name}" /></b>!</p>
+	<p>🔐 Приватна сторінка 🔐</p>
+	<p></p>
+	<p th:if="${passwordChanged}"><b>✅ Пароль змінено!</b><br/></p>
+	<p>Змінемо пароль?</p>
+	<form action="/changePassword" method="post">
+		<input name="_csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+		<label for="password">Новий пароль:  </label>
+		<input type="password" id="password" name="password">
+		<button class="btn" type="submit">Най буде!</button>
+	</form>
+	<p></p>
+	<form method="post" action="/logout">
+		<input name="_csrf" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+		<button class="btn" type="submit">До побачення</button>
+	</form>
+</body>
+</html>
